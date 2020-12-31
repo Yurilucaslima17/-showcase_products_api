@@ -1,3 +1,3 @@
-export default function Token(){
-    return "123456";
+export default function Token() {
+  return '123456';
 }

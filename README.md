@@ -18,6 +18,14 @@ You can start editing the page by modifying `pages/index.js`. The page auto-upda
 
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
+## About Project
+
+This project utilizes [Ant Design](https://ant.design/) for most of visual design. The data from the project is from [Rick and Morty api](https://rickandmortyapi.com/) which is requested by Axios. 
+
+## Future Features
+
+Successfully componentize all api requests, add pokemon api request (on going), fix authentication errors, successfully implement favorites feature
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

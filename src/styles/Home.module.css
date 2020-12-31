@@ -1,5 +1,5 @@
-.shelf{
-  background-color: #EEAA7B;
+.shelf {
+  background-color: #eeaa7b;
 }
 
 .container {
@@ -115,8 +115,9 @@
   line-height: 1.5;
 }
 
-.ant-menu.ant-menu-dark .ant-menu-item-selected, .ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected{
-  background-color: #E37222;
+.ant-menu.ant-menu-dark .ant-menu-item-selected,
+.ant-menu-submenu-popup.ant-menu-dark .ant-menu-item-selected {
+  background-color: #e37222;
 }
 
 @media (max-width: 600px) {

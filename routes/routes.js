@@ -1,20 +1,20 @@
-import React, { useContext } from "react";
-import {Switch, Route} from "react-router-dom";
+import React, { useContext } from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import { Context } from "../services/authContext";
+import { Context } from '../services/authContext';
 
-import Login from "../pages/login";
-import Users from "../pages/users";
+import Login from '../pages/login';
+import Users from '../pages/users';
 
-function CustomRoute({isPrivate, ...restProps}) {
-  const {loading, authenticated} = useContext(Context);
+function CustomRoute({ isPrivate, ...restProps }) {
+  const { loading, authenticated } = useContext(Context);
 
-  if(loading){
+  if (loading) {
     return <h2>Loading...</h2>;
   }
-  
-  if(isPrivate && !authenticated){
-    return <Redirect to="/login" />
+
+  if (isPrivate && !authenticated) {
+    return <Redirect to="/login" />;
   }
 
   return <Route {...restProps} />;
@@ -24,7 +24,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route exact path="/login" component={Login} />
-      <Route isPrivate exact path="/login" component={Users} />
+      <Route isPrivate exact path="/users" component={Users} />
     </Switch>
   );
 }

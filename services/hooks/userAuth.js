@@ -1,28 +1,30 @@
-import {useEffect, useState} from 'react';
-import {useRouter} from "next/router";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
 
-import api from "../api";
+import api from '../api';
 
-export default function useAuth(){
-    const [authenticated, setAuthenticated] = useState(false);
-    const [loading, setLoading] = useState(true);
+export default function useAuth() {
+  const [authenticated, setAuthenticated] = useState(false);
+  const [loading, setLoading] = useState(true);
 
-    const router = useRouter();
+  const router = useRouter();
 
-    useEffect(()=>{
+  useEffect(() => {
     const token = localStorage.getItem('token');
 
-    if(token){
+    if (token) {
       api.defaults.headers.Authorization = `Bearer ${JSON.parse(token)}`;
       setAuthenticated(true);
     }
 
     setLoading(false);
-  })
+  });
 
-  function handleLogin(){
+  function handleLogin() {
     // const {data: {token}} = await api.post('/authenticate');
-    const {data: {token}} = {data: "123456"};
+    const {
+      data: { token },
+    } = { data: '123456' };
     localStorage.setItem('token', JSON.stringify(token));
     // api.defaults.headers.Authorization = `Bearer ${token}`;
     setAuthenticated(true);
@@ -36,5 +38,5 @@ export default function useAuth(){
     router.push('/login');
   }
 
-  return {authenticated, loading, handleLogout, handleLogin};
+  return { authenticated, loading, handleLogout, handleLogin };
 }
